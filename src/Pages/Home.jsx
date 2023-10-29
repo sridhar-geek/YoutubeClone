@@ -8,6 +8,7 @@ import { getVideos } from "../api/getVideos";
 const Home = () => {
   const [category, setCategory] = useState("New");
   const [videos, setVideos] = useState([]);
+  
   useEffect(() => {
     const Feed = async () => {
       const data = await getVideos(`search?part=snippnet&q=${category}`);
@@ -34,7 +35,6 @@ const Home = () => {
         </Typography>
       </Box>
       <Box p={2} sx={{ overflow: "auto", height: "90vh", flex: 2 }}>
-        <h1>{videos}</h1>
         <Typography
           variant="h4"
           fontWeight="bold"
