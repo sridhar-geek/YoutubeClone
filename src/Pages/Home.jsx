@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
-import Slidebar from "../Components/Slidebar";
-import VideoCard from "../Components/VideoCard";
-import ChannelCard from "../Components/ChannelCard";
+import { Slidebar, VideoCard, ChannelCard } from "./";
 import { getVideos } from "../api/getVideos";
 
 const Home = () => {
@@ -14,17 +12,17 @@ const Home = () => {
     const Feed = async () => {
       const data = await getVideos(`search?part=snippet,id&q=${category}`);
       setVideos(data);
-      console.log(data)
     };
     Feed();
   }, [category]);
+  console.log(videos)
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
         sx={{
           height: { sx: "auto", md: "92vh" },
           borderRight: "1px solid #3d3d3d",
-          px: { sx: 0, md: 2 }
+          px: { sx: 0, md: 2 },
         }}
       >
         <Slidebar category={category} setCategory={setCategory} />
@@ -45,15 +43,15 @@ const Home = () => {
         >
           {category} <span style={{ color: "#F31503" }}>Videos</span>
         </Typography>
-        <Stack direction='row' flexWrap='wrap'justifyContent='start' gap={2}>
-          {videos.map((video, i)=> (
+        <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+          {videos.map((video, i) => (
             <Box key={i}>
-              {video.id.videoId && <VideoCard video={video}/>}
-              {/* {video.id.channelId && <ChannelCard video={video} />}  */}
+              {video.id.videoId && <VideoCard video={video} />}
+              {video.id.channelId && <ChannelCard channelDetail={video} />}
             </Box>
           ))}
         </Stack>
-=      </Box>
+      </Box>
     </Stack>
   );
 };

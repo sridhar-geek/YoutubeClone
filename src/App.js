@@ -1,8 +1,7 @@
 import { Box } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 
-import { ChannelDetails, Home, VideoDetails, Search } from "./Pages";
-import Navbar from "./Components/Navbar";
+import { ChannelDetails, Home, VideoDetails, Search, Navbar } from "./Pages";
 
 export default function App() {
   return (
