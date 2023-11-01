@@ -15,7 +15,6 @@ const Home = () => {
     };
     Feed();
   }, [category]);
-  console.log(videos)
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box

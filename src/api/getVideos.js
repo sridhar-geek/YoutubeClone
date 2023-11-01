@@ -14,7 +14,6 @@ export const getVideos = async (url) => {
         "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com"
       }
     });
-// console.log(response.data.items)
     return response.data.items
   } catch (error) {
     console.error(error);

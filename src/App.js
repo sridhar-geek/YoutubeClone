@@ -11,7 +11,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/channel/:id" element={<ChannelDetails />} />
         <Route path="/video/:id" element={<VideoDetails />} />
-        <Route path="serch/:searchTerm" element={<Search />} />
+        <Route path="/search/:searchTerm" element={<Search />} />
       </Routes>
     </Box>
   );

@@ -6,8 +6,6 @@ import { demoProfilePicture } from "../Utilis/assests";
 import { CloseFullscreen } from "@mui/icons-material";
 
 const ChannelCard = ({ channelDetail, marginTop }) => {
-  // console.log(channelDetail)
-  // console.log(channelDetail.id.channelId)
   return (
     <Box
       sx={{

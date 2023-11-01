@@ -7,7 +7,6 @@ import { getVideos } from "../api/getVideos";
 
 const ChannelDetails = () => {
   const { id } = useParams();
-console.log(id)
   const [channelDetails, setChannelDetails] = useState(null);
   const [videos, setVideos] = useState([]);
   useEffect(() => {
@@ -24,7 +23,6 @@ console.log(id)
     };
     getData();
   }, [id]);
-console.log(videos)
   return (
     <Box minHeight="95vh">
       <Box>
